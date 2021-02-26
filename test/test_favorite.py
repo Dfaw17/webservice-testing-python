@@ -22,21 +22,6 @@ class TestCreateFavorite:
         assert data["attributes"]["airport"]["iata"] == a
         assert data["attributes"]["note"] == b
 
-    def test_create_favorite(self):
-        a = "HGU"
-        b = "My Third Fav Airport"
-
-        fav = {
-            "airport_id": a,
-            "note": b
-        }
-
-        response2 = requests.post("https://airportgap.dev-tester.com/api/favorites", data=fav)
-        data = response2.json().get('errors')[0]['detail']
-
-        assert response2.status_code == 401
-        assert data == "You are not authorized to perform the requested action."
-
 
     def test_favorite_already_created(self):
         a = "HGU"
