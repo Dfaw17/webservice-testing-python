@@ -9,3 +9,4 @@ assert len(response.json().get("data")) > 1
 print("faw")
 print("maulana")
 print("ayah")
+print("ibu")
